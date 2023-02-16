@@ -1,2 +1,2 @@
 #!/bin/bash
-stat -c hello = "guillaume" chown vincent hello
+chown --from=guillaume vincent hello

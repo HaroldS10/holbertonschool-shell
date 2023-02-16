@@ -1,2 +1,0 @@
-#!/bin/bash
-tr ' ' '\n' | sort | uniq -u | awk '{print $1}'

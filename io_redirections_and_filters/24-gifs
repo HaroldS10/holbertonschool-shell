@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -iname "*.gif" | while read filename | basename "${filename%.*}" | sort -f | xargs echo $(stat -c "%s" "$filename") 
+find "$(pwd)" -type f -iname '*.gif' -print0 | xargs -0 -I {} sh -c 'printf "%d %s\n" "$(stat -c%s {})" "$(basename {} .gif)"' | sort -f -n | awk '{ print $2 }'

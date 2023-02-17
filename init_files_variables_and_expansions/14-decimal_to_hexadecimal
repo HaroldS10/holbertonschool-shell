@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($DECIMAL obase=16)) 
+printf "%X" "%s\n" $(echo "$DECIMAL")

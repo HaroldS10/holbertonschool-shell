@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -iname "*.gif" | while read filename | xargs echo $(stat -c "%s" "$filename") | sort -f | xargs echo $(stat -c "%s" "$filename") 
+find . -type f -iname "*.gif" | while read filename | basename "${filename%.*}" | sort -f | xargs echo $(stat -c "%s" "$filename") 
